@@ -14,6 +14,7 @@
 * check vimrc used - :echo $MYVIMRC  
 * select text - V and arrow down or up
 * delete selected text - d
+* clean all in vim: esc -> g -> g -> d -> G
 
 # cli
 * permissions: 7(rwx),6(rw),5(rx),4(r),3(wx),2(w), 1(x), 0(no)
@@ -60,3 +61,35 @@ prints on
 many lines
 END
 ```
+* function
+``` bash 
+getDate(){
+  date
+  return 
+}
+getDate
+```
+* global and local variables 
+``` bash
+name="NameGlobal"
+demLocal(){
+  local name="nameLocal" #without local it will override name variable
+  return
+}
+demLocal
+echo "$name"
+```
+* function with arguments
+``` bash
+getSum(){
+  local num3=$1
+  local num4=$2
+  local sum=$((num3+num4))
+  echo $sum
+}
+num1=5
+num2=6
+sum=$(getSum num1 num2)
+echo "$sum"
+```
+
