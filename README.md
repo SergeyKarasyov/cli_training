@@ -12,3 +12,5 @@
 * set spaces amount for tab - :set tabstop=2  
 * set autoindent - :set autoindent  
 * check vimrc used - :echo $MYVIMRC  
+* select text - V and arrow down or up
+* delete selected text - d
