@@ -1,4 +1,5 @@
 # cli_training  
+# test it with https://www.tutorialspoint.com/execute_bash_online.php
 
 # vim   
 * start of line - 0  
