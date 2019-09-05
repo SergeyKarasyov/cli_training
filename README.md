@@ -47,4 +47,16 @@ echo "++rand = $(( ++rand ))"
 num7=1.2
 num8=3.4
 ```
-
+* python
+``` bash 
+num9=$(python -c "print $num7+$num8")
+echo "$num9"
+```
+* cat multiline
+``` bash 
+cat<<END
+This text 
+prints on
+many lines
+END
+```
