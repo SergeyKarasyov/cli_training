@@ -94,4 +94,9 @@ sum=$(getSum num1 num2)
 echo "$sum"
 ```
 
+* user input
+``` shell
+read -p "What is your name?" name
+echo $name
+```
 
