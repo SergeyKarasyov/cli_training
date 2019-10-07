@@ -242,6 +242,7 @@ for i in ${sorted_nums[*]}; do
   echo $i
 done
 ```
+```
 echo "1st arg: $1"
 sum=0
 //$# - number of args
