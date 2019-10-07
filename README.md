@@ -217,4 +217,37 @@ until [$num -gt 10]; do
     echo $num
 done
 ```
-
+* another while reading file
+```shell
+while read avg rbis hrs; do 
+ printf "Avg: ${avg}\nRBIs: ${rbis}\n HRs: ${hrs}\n"
+done < barry_bonds.txt 
+```
+* arrays
+```shell
+nums=(1 2 -3 -4)
+echo "${nums[0]}"
+for i in ${nums[*]}; do
+  echo $i
+done
+for i in ${nums[@]}; do
+  echo $i
+done
+echo "Array length: ${#nums[@]}"
+echo "Index 3 length: ${#nums[3]}"
+sorted_nums=($(for i in "${nums[@]}"; do
+  echo $i;
+done | sort))
+for i in ${sorted_nums[*]}; do
+  echo $i
+done
+```
+echo "1st arg: $1"
+sum=0
+//$# - number of args
+while [[ $# -gt 0 ]]; do
+  num=$1
+  sum=$((sum+num))
+  shift// moves argument two into position 1
+done
+```
