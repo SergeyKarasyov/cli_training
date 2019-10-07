@@ -99,4 +99,122 @@ echo "$sum"
 read -p "What is your name?" name
 echo $name
 ```
+* condition
+```shell
+read -p "How old are you?" age
+if[ $age -ge 16 ]
+then
+  echo "you can drive"
+elif [ $age -eq 15]
+then 
+  echo "you can drive next year"
+else
+  echo "you can't drive next year"
+fi
+```
+
+```shell
+read -p "enter num: " num
+if (( num == 10 )); then
+  echo "Num is 10"
+fi
+if (( (( num % 2 )) == 0 )); then
+  echo "even"
+fi
+
+if (( (( num > 2 )) && (( num == -1 ))  )); then
+  echo "smth"
+fi
+```
+* if string
+```shell
+
+if ["$str1"] ; then
+    echo "str1 is not null"
+fi
+if [-z "$str1"] ; then
+    echo "str1 has no value"
+fi
+
+if [ "$str1"=="$str2" ] ; then
+    echo "eq"
+fi
+```
+
+* if file exists (-x - executable, -r - readable, - f - reg file, -w - writable, -d - dir, -L - link, -S - socket, - G - owned by group, -O - user owned )
+```shell
+file1 = "file1.txt"
+if [-e "$file1"]; then
+  echo "$file1 exists"
+fi
+```
+
+* regex 
+```shell
+read -p "validate a date: " date
+pat="^[0-9]{8}$"
+if [[ $date =~ $pat ]]; then
+  echo "date is ok"
+fi
+```
+* remove spaces
+```shell
+num1=${num1//[[:blank:]]/}
+```
+* substitute in string
+```shell
+samp_string="the dog"
+echo "{samp_string//dog/cat}"
+```
+* switch
+```shell
+case $num in
+[0-5])
+  echo "less than 5"
+  ;;
+6) 
+  echo "more"
+  ;;
+[6-9]|1[0-8]
+  echo "even more"
+  ;;
+*)
+  echo "problem"
+  ;;
+esac  
+```
+* ternary operator
+```shell
+((age >=18?(can_vote=1):(can_vote=0)))
+```
+* parameter expansion
+```shell
+string="a rand string"
+echo "String length : ${#string}"
+echo "from second symbol till end ${string:2}"
+echo "symbols ${string:2:7}"
+echo "symbols after 'A ' ${string#*A }"
+```
+
+* while loop
+```shell
+num=1
+while [$num -le 10]; do
+  echo $num
+  num=$((num+1))
+  if(( ((num%2)) == 0)); then
+    num=$((num + 1))
+    continue
+  fi
+    if(( ((num%2)) == 1)); then
+    break
+  fi
+done
+```
+* untill
+```shell
+until [$num -gt 10]; do
+    echo $num
+done
+```
 
